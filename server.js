@@ -9,10 +9,10 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 const db = mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'',
-    database:'todo_react'
+    host:'sql7.freemysqlhosting.net',
+    user:'sql7621968',
+    password:'qgfY2Iiu5k',
+    database:'sql7621968'
 });
 
 db.connect((err)=>{
