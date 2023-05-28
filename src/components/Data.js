@@ -11,7 +11,7 @@ const Data = ({data:{text, id_T}, onDelete}) => {
                           <input className='form-check-input' type="checkbox" value="" id="flexCheckDefault" />
                       </div>
                       <div className="ms-3">
-                          <div dangerouslySetInnerHTML={{ __html: sanitizeHtmlContent(content) }}></div>
+                          <p className="mb-0" dangerouslySetInnerHTML={{ __html: text }}></p>
                       </div>
                   </div>
               </div>
