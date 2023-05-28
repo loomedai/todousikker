@@ -31,7 +31,6 @@ function Todo() {
         .then(()=> setTodos(todos.filter(({ id_T}) => id_T !==idToDelete))); 
   }
   
-
   return (
     <div className="bg bg-success bg-gradient vh-100 pt-5">
       <div className="container pt-4 pb-4 mt-5 bg-light rounded ps-5 pe-4">
@@ -57,17 +56,14 @@ function Todo() {
           </div>
         </form>
         <ul className="list-unstyled pt-5">
-      {todos.map((todo, index) => (
-        <Data key={index} data={todo} onDelete={() => handleDelete(todo.id_T)} />
-      ))}
-    </ul>
+          {todos.map((todo, index) => (
+          <Data key={index} data={todo} onDelete={() => handleDelete(todo.id_T)} />
+          ))}
+        </ul>
       </div>
     </div>
-
     
   )
-
-  
 }
 
 export default Todo;

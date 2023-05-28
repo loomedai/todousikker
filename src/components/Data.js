@@ -12,7 +12,6 @@ const Data = ({data:{text, id_T}, onDelete}) => {
                       </div>
                       <div className="ms-3">
                           <div dangerouslySetInnerHTML={{ __html: sanitizeHtmlContent(content) }}></div>
-
                       </div>
                   </div>
               </div>
