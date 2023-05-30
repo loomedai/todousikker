@@ -39,11 +39,14 @@ app.post('/todos', (req, res) => {
 
 app.delete('/todos/:id', (req, res) =>{
     const id = req.params.id;
-    db.query('DELETE FROM todos WHERE id_T = ?', id, (err, result) => {
+    const query = `DELETE FROM todos WHERE id_T = '${id}'`;
+    db.query(query, (err, result) => {
         if (err) throw err;
         res.json(result);
     });
 });
+
+
 
 app.listen(5000, () => console.log('Server running on port 5000'));
 
