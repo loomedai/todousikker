@@ -12,8 +12,7 @@ function Todo() {
         .then(data => setTodos(data));
   }, []);
 
-  const handleSubmit = (event) => {
-   // event.preventDefault(); // forhindrer formen i at genindlæse siden
+  const handleSubmit = () => {
     if (newTodo !== '') {
       fetch('http://localhost:5000/todos', {
         method: 'POST',
@@ -23,8 +22,7 @@ function Todo() {
       .then(response => response.json())
       .then(data => setTodos([...todos, data]));
       setNewTodo('');
-  }
-}
+  }}
 
   const handleDelete = (idToDelete) => {
     fetch(`http://localhost:5000/todos/${idToDelete}`, {method: 'DELETE'})
@@ -44,9 +42,7 @@ function Todo() {
                 placeholder="Add item"
                 value={newTodo}
                 onChange={(event) => setNewTodo(event.target.value)}
-              />
-
-              
+              />              
             </div>
             <div className="col-md-2">
               <button className="btn btn-block bg-white" type="submit">
@@ -61,9 +57,7 @@ function Todo() {
           ))}
         </ul>
       </div>
-    </div>
-    
-  )
-}
+    </div>    
+  )}
 
 export default Todo;

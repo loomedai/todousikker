@@ -1,10 +1,8 @@
 const express = require ('express');
 const cors = require('cors');
 const mysql =require('mysql');
-
 const app = express();
 app.use(cors({origin: 'http://localhost:3000'}));
-
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
@@ -29,7 +27,6 @@ app.get('/todos', (req, res) =>{
 
 app.post('/todos', (req, res) => {
     const newTodo =req.body.todo;
-    // INGEN escaping eller validering af input. MEGET usikker.
     const query = `INSERT INTO todos (text) VALUES ('${newTodo}')`;
     db.query(query, (err, result) => {
         if (err) throw err;
@@ -45,8 +42,6 @@ app.delete('/todos/:id', (req, res) =>{
         res.json(result);
     });
 });
-
-
 
 app.listen(5000, () => console.log('Server running on port 5000'));
 
