@@ -1,12 +1,12 @@
-const express = require ('express');
-const cors = require('cors');
-const mysql =require('mysql');
+import express, { json, urlencoded } from 'express';
+import cors from 'cors';
+import { createConnection } from 'mysql';
 const app = express();
 app.use(cors({origin: 'http://localhost:3000'}));
-app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(json());
+app.use(urlencoded({extended:true}));
 
-const db = mysql.createConnection({
+const db = createConnection({
     host:'sql7.freemysqlhosting.net',
     user:'sql7621968',
     password:'qgfY2Iiu5k',
